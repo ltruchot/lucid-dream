@@ -2,6 +2,81 @@
 
 var Curry = require("bs-platform/lib/js/curry.js");
 var React = require("react");
+var ScopedNaturalLanguageProcessor = require("scoped-natural-language-processor");
+
+var sentences = /* array */[
+  {
+    key: "sentence",
+    is: /* array */[],
+    contains: /* array */[
+      /* array */[
+        "*subject",
+        "*intransitiveVerb"
+      ],
+      /* array */[
+        "*article",
+        "*subject",
+        "*intransitiveVerb"
+      ],
+      /* array */[
+        "*subject",
+        "*linkingVerb",
+        "*adjective"
+      ],
+      /* array */[
+        "*article",
+        "*subject",
+        "*linkingVerb",
+        "*adjective"
+      ]
+    ]
+  },
+  {
+    key: "article",
+    is: /* array */[
+      "this",
+      "the",
+      "a"
+    ],
+    contains: /* array */[]
+  },
+  {
+    key: "subject",
+    is: /* array */[
+      "cat",
+      "sky",
+      "grandma"
+    ],
+    contains: /* array */[]
+  },
+  {
+    key: "linkingVerb",
+    is: /* array */[
+      "is",
+      "seems",
+      "becomes"
+    ],
+    contains: /* array */[]
+  },
+  {
+    key: "intransitiveVerb",
+    is: /* array */[
+      "sings",
+      "calms down"
+    ],
+    contains: /* array */[]
+  },
+  {
+    key: "adjective",
+    is: /* array */[
+      "gray",
+      "threatening"
+    ],
+    contains: /* array */[]
+  }
+];
+
+console.log(ScopedNaturalLanguageProcessor.process(sentences, "the cat is threatening"));
 
 function BlinkingGreeting(Props) {
   var children = Props.children;
@@ -34,5 +109,6 @@ function BlinkingGreeting(Props) {
 
 var make = BlinkingGreeting;
 
+exports.sentences = sentences;
 exports.make = make;
-/* react Not a pure module */
+/*  Not a pure module */

@@ -16,10 +16,11 @@
   "author": "",
   "license": "MIT",
   "dependencies": {
+    "aframe": "^1.0.3",
     "react": "^16.8.1",
     "react-dom": "^16.8.1",
     "reason-react": ">=0.7.0",
-    "scoped-natural-language-processor": "0.0.4"
+    "scoped-natural-language-processor": "0.0.16"
   },
   "devDependencies": {
     "bs-platform": "^7.0.1",
